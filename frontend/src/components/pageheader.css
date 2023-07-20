@@ -1,0 +1,31 @@
+.pageTitle
+{
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 5vw;
+  width: 25%;
+  cursor: pointer;
+
+}
+
+.headerBar
+{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 10vh;
+  background-color: gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 2px black;
+}
+.loginButton
+{
+  margin-right: 5vw;
+}
+
+.buttonclass:hover
+{
+  cursor: pointer;
+}

@@ -1,0 +1,70 @@
+.itemMod-FlexContainer {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: .5vw;
+  overflow:hidden;
+}
+
+.addItemTable
+{
+  width: 100%;
+  align-content: center;
+  border-collapse: collapse;
+  position: relative;
+}
+
+.addItemTable input
+{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.markTitleItemMod
+{
+  width: 5%;
+}
+.managerTitleItemMod
+{
+  width: 10%;
+}
+.itemTitleItemMod
+{
+  width: 10%;
+}
+.descTitleItemMod
+{
+ width: 65%;
+}
+.countTitleItemMod
+{
+ width: 10%;
+}
+
+td
+{
+  border: solid black;
+
+}
+
+th
+{
+  border: solid black;
+}
+
+tr {
+  border: solid black;
+  background: gray;
+}
+
+.submitButton
+{
+  /*There is some flex logic to put this at the end.
+   can't remember it for the life of me and Im trying to fix a login bug and this on a plane and Im not paying for internets*/
+
+}
+
+.buttonclass:hover
+{
+  cursor: pointer;
+}

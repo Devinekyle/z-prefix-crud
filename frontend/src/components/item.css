@@ -1,0 +1,22 @@
+.makeShiny
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5vw;
+}
+
+.makeShiny input[type="text"] {
+  border: none;
+  background: none;
+  color: inherit;  /* Matches color of surrounding text */
+  font: inherit;   /* Matches font of surrounding text */
+  outline: none;   /* Removes focus outline */
+}
+
+.makeShiny input[type="text"]:focus,
+.makeShiny input[type="text"]:hover {
+  border-bottom: 2px solid;  /* Adds a bottom border when the input is focused or hovered over */
+  cursor: text; /* Changes the cursor to indicate that the field is editable */
+}

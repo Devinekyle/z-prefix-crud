@@ -1,0 +1,65 @@
+.tableDiv {
+  margin: 5vw;
+  width: 90vw;
+  height: 70vh;
+  overflow: auto;
+}
+
+.inventoryTable
+{
+  width: 100%;
+  align-content: center;
+  border-collapse: collapse;
+}
+
+.tableValueCenter
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.markTitle
+{
+  width: 5%;
+}
+.managerTitle
+{
+  width: 10%;
+}
+.itemTitle
+{
+  width: 10%;
+}
+.descTitle
+{
+ width: 65%;
+}
+.countTitle
+{
+ width: 10%;
+}
+
+.tableValue
+{
+  border: solid black;
+
+}
+
+.tableRow {
+  border: solid black;
+  background: gray;
+}
+
+.modItem
+{
+  display: flex;
+  justify-content: flex-start;
+  gap: .5vw;
+}
+
+.buttonclass:hover
+{
+  cursor: pointer;
+}

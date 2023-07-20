@@ -1,0 +1,25 @@
+.userDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+}
+.userDiv p {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.userDiv form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userDiv button {
+  margin: 1vw;
+}
+.userDiv label {
+  width: 10vw;
+}
