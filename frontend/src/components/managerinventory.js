@@ -76,6 +76,7 @@ export const ManagerInventory = () =>
   return (
     <div className = "tableDiv">
         <ItemMod delID={markIDRef} userRef = {userRef}/>
+        <h1>{userRef.current}'s Inventory</h1>
       <table className = "inventoryTable">
         <tr>
           {isAuth ? <th className = "markTitle">Mark</th> : <></>}

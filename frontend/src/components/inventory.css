@@ -50,6 +50,7 @@
 .tableRow {
   border: solid black;
   background: gray;
+  text-align: center;
 }
 
 .modItem

@@ -32,8 +32,9 @@ export const useAuthCheck = () =>
 
         let result = await fetch(`${BackEndURL}/login`, header)
         let data = await result.json();
-        if(data==='Valid')
+        if(data ==='Valid')
         {
+          setToken(useToken)
           setAuth(true);
           sessionStorage.setItem("token", JSON.stringify(useToken))
           if(!auth)

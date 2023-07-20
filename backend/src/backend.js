@@ -252,7 +252,6 @@ app.get("/", async (req, res) =>
 
 app.get("/inventory", async (req, res) =>
 {
-  console.log("test");
   let result = await client.query(`SELECT item_table.id, userid, username, item_name, description, quantity FROM item_table JOIN user_table ON user_table.id = userid`)
   if(result.rows)
   {
