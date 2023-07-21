@@ -6,6 +6,10 @@ The dockerbuild files and docker-compose file should automatically setup with pr
 
 How to Use:
 
+Any User:
+
+To return to the page for everyone's inventory simply click on the title "Inventory".
+
 Visitor: Unable to edit, add, or remove items. They can select a manager to see all of their inventory or an item to see the item details.
 
 Inventory Manager:
@@ -14,7 +18,7 @@ Currently all inventory managers may edit any manager's items. There was no auth
 To Edit an item:
 Simply go to an item details page by clicking on the item title. You may click on text to change it then click submit to change any item.
 
-To add an item:
+To Add an item:
 Go to the inventory manager's page and click add item. Fill in the details and click confirm.
 
 To Delete Items:

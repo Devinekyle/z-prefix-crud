@@ -34,6 +34,7 @@ export const Item = () =>
 
     let response = await fetch(`${BackEndURL}/inventory`, header)
     let data = await response.json();
+    console.log(data);
   }
 
   useEffect(() =>

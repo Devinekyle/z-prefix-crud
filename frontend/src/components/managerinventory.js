@@ -56,7 +56,6 @@ export const ManagerInventory = () =>
             }
             return (
             <tr className = "tableRow" key={keyValue}>
-              {isAuth ? <td className = "tableValueCenter">{element.id}</td> : <></>}
               {isAuth ? <td className = "tableValueCenter"><input type="checkbox" name={element.id} onChange={(e)=>handleChecks(e)}/></td> : <></>}
               <td className = "tableValue">{element.username}</td>
               <td className = "tableValue buttonclass" onClick={()=>{navigate(`/inventory/${element.id}`)}}>{element.item_name}</td>

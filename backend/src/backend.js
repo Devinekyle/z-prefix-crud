@@ -313,15 +313,24 @@ app.post('/inventory', async (req, res) =>
   let authd = await authCheck(req);
   if(authd)
   {
-    let result = client.query(`INSERT INTO item_table (userid, item_name, description, quantity) VALUES ((SELECT id FROM user_table WHERE username ILIKE $1), $2, $3, $4)`, [username, name, desc, Number(itemQuantity)])
-    console.log(result)
+    if(isNaN(Number(itemQuantity)))
+    {
+      res.sendStatus(401);
+      return;
+    }
+    if(!username || !name || !desc)
+    {
+      res.sendStatus(401);
+      return;
+    }
+    let result = await client.query(`INSERT INTO item_table (userid, item_name, description, quantity) VALUES ((SELECT id FROM user_table WHERE username ILIKE $1), $2, $3, $4)`, [username, name, desc, Number(itemQuantity)])
     if(result?.rowCount >= 1)
     {
-      res.status(200).send(JSON.stringify(`Found and removed ${result.rowCount} items`))
+      res.status(200).send(JSON.stringify(`Added your new item!`))
     }
     else
     {
-      res.status(200).send(JSON.stringify("No items with ID found"))
+      res.status(200).send(JSON.stringify("Unable to add item! Although the DB didn't say there was an error so your move"))
     }
   }
   else
@@ -342,12 +351,14 @@ app.patch('/inventory', async (req, res) =>
       res.sendStatus(400);
       return;
     }
+    console.log(itemID);
     let result = await client.query(`UPDATE item_table SET item_name = $2, description = $3, quantity = $4 WHERE id = $1`, [itemID, itemTitle, itemDescription, Number(itemQuantity)])
     if(result?.rowCount)
     {
       res.sendStatus(200);
       console.log("edited");
     }
+    console.log(result);
   }
   else
   {
