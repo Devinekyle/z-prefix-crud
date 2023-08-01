@@ -269,14 +269,17 @@ app.get("/accounts/:id", async (req, res) =>
   if(id)
   {
     let result = await client.query(`SELECT item_table.id, userid, username, item_name, description, quantity FROM item_table JOIN user_table ON user_table.id = item_table.userid WHERE user_table.id = $1`, [id])
-    if(result.rows)
+    if(result.rows[0])
     {
       res.status(200).send(result.rows)
     }
     else
     {
-      res.status(400);
+      let result = await client.query(`SELECT username FROM user_table WHERE id = $1`, [id])
+      res.status(200).send(result.rows)
     }
+
+
   }
   else
   {

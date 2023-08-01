@@ -38,7 +38,6 @@ export const ManagerInventory = () =>
   {
     const fetchData = async () =>
     {
-
       let response = await fetch(`${BackEndURL}/accounts/${id}`)
       if(response.status === 400)
       {
@@ -47,23 +46,29 @@ export const ManagerInventory = () =>
       else
       {
         let data = await response.json();
-        let rowNames = data.map(element =>
-          {
-            let keyValue = element.id;
-            if(token)
+        let rowNames;
+        if(data[0].id)
+        {
+          rowNames = data.map(element =>
             {
-              keyValue = element.id + token
-            }
-            return (
-            <tr className = "tableRow" key={keyValue}>
-              {isAuth ? <td className = "tableValueCenter"><input type="checkbox" name={element.id} onChange={(e)=>handleChecks(e)}/></td> : <></>}
-              <td className = "tableValue">{element.username}</td>
-              <td className = "tableValue buttonclass" onClick={()=>{navigate(`/inventory/${element.id}`)}}>{element.item_name}</td>
-              <td className = "tableValue">{element.description.length < 100 ? element.description : `${element.description.substring(0, 100)}...`}</td>
-              <td className = "tableValue">{element.quantity}</td>
-            </tr>)
-          })
+              let keyValue = element.id;
+              if(token)
+              {
+                keyValue = element.id + token
+              }
+              return (
+              <tr className = "tableRow" key={keyValue}>
+                {isAuth ? <td className = "tableValueCenter"><input type="checkbox" name={element.id} onChange={(e)=>handleChecks(e)}/></td> : <></>}
+                <td className = "tableValue">{element.username}</td>
+                <td className = "tableValue buttonclass" onClick={()=>{navigate(`/inventory/${element.id}`)}}>{element.item_name}</td>
+                <td className = "tableValue">{element.description.length < 100 ? element.description : `${element.description.substring(0, 100)}...`}</td>
+                <td className = "tableValue">{element.quantity}</td>
+              </tr>)
+            })
+        }
+
           //This is a dirty hack...
+          console.log(data)
           userRef.current = data[0]?.username
           setInventory(rowNames);
       }

@@ -125,8 +125,8 @@ export const ItemMod = ({delID, userRef}) =>
       "Authorization": `Bearer ${token}`
     },
     body: ""}
+
     let modData = {username: user.current.current, desc: itemDesc, name: itemTitle, itemQuantity: itemCount}
-    console.log(modData);
     switch(modType)
     {
       case 0:
